@@ -1,0 +1,32 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <form>
+        <p id="content"></p>
+        <p ><span id="prefix"></span><input id="video" type="number"></p>
+        <input id="time" type="button" onclick="record()" value="record">
+    </form>
+        <script>
+            var time_clip = [];
+            function choose_word(word){
+                var arr = word.split(".");
+                console.log(arr);
+                var content = document.getElementById("content");
+                for(i=0;i<arr.length;i++){
+                    var x = "<span  onclick='javascript:flag(this)' id='"+i+"'>"+arr[i]+".</span>";
+                    content.innerHTML += x;
+                }
+            }
+            function flag(x){
+                var a =document.getElementById("prefix");
+                a.innerHTML = "'"+x.innerHTML.trim() + "':";
+                a.setAttribute("value",x.id);
+            }
+            choose_word("dijsafoij. asdgijsaodjfisjasofh. isadjfoijdsaoijfjodsiaj.");
+            function record(){
+
+            }
+        </script>
+    </body>
+</html>
