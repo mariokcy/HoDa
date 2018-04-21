@@ -22,7 +22,7 @@ function find_math(word){
         var arr = word.split(".");
         time_clip = call_flag();
         console.log(arr);
-        var content = document.getElementById("content");
+        var content = document.getElementById("cnt");
         for(i=0;i<arr.length;i++){
             if (i<time_clip[0]){
                 start_time = 0;

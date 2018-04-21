@@ -50,12 +50,22 @@
 					</tr>
 				</table>
 				<input type="button" onclick="add()" value="Click to add more point"></button>
-				<input type="submit" value="submit">
+				<video id="stream" src="" width=640 height=480></video>
+				 <br>
+				<input type="button" onclick="" value="submit">
 			</form>
 			<p id="content"></p>
 		</div>
 	  </div>
 </div>
+<script>
+	navigator.mediaDevices.getUserMedia({video:true}).then(handleSuccess).catch(handleError);
+	function handleSuccess(stream){
+		document.getElementById("stream").srcObject = stream;
+	}
+	function handleError(error){
+	}
+</script>
 <script src="jquery-3.3.1.min.js"></script>
 <script src="mainPage.js"></script>
 <script src="output.js"></script>
