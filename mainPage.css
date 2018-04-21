@@ -1,9 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+.tabs{
+	float:left;
+	border: 1px solid #ccc;
+    background-color: #FFFFFF;
+    width: 30%;
+    height: 300px;
+}
 
-.login-page {
-  width: 360px;
-  padding: 8% 0 0;
-  margin: auto;
+.main-page {
+  width: 80%;
+  padding: 1% 0 0;
+  margin: 2%;
 }
 .form {
   position: relative;
@@ -26,12 +33,12 @@
   box-sizing: border-box;
   font-size: 14px;
 }
-.form button {
+.tab button {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
   background: #4CAF50;
-  width: 100%;
+  width: 10%;
   border: 0;
   padding: 15px;
   color: #FFFFFF;
@@ -40,6 +47,13 @@
   transition: all 0.3 ease;
   cursor: pointer;
 }
+.tab button:hover,.form button:active,.form button:focus {
+  background: #43A047;
+}
+
+
+
+
 .form button:hover,.form button:active,.form button:focus {
   background: #43A047;
 }
