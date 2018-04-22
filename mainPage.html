@@ -6,35 +6,20 @@
 <link rel="stylesheet" href="mainPage.css">
 <body onload="openPage(event,'Home')">
 <div class="main-page">
-	  <div class="tab">
+	  <div class="tab" style="align-content: center;">
 		<button class="tablinks" onclick="openPage(event,'Home')">Home</button>
-		<button class="tablinks" onclick="openPage(event,'Browse');choose_word('This is sample. Not accurate result.')">Browse</button>
-		<button class="tablinks" onclick="openPage(event,'Create')">Create</button>
+		<button class="tablinks" onclick="openPage(event,'Browse');choose_word('This is sample. Not accurate result.');">Browse</button>
+		<button class="tablinks" onclick="openPage(event,'Create');">Create</button>
 		<div id="Home" class="tabcontent">
 		<p>HOME CONTENT HERE</p>
 		</div>
 
 		<div id="Browse" class="tabcontent">
-	    <div class="split left">
-			<!--
-            <a onClick="play(20,40)">plastic12</a>
-        <br>
-        plastic12
-        <br>
-		plastic12
-			-->
-			<div id="cnt">
-
-			</div>
-        </div>
-
-        <div class="split right">
-	    <video id="video1" width="400" controls>
-            <source src="./testvideo.mp4" type="video/mp4">
-              Your browser does not support HTML5 video.
-        </video>
-        </div>
-	</div>
+			<form>
+				search paper: <input type="search" id="search_1"><input type="button" onclick="javascript:finding()" value="GO!">
+				<span id="result"></span>
+			</form>
+		</div>
 		</div>
 
 		<div id="Create" class="tabcontent">
@@ -42,33 +27,35 @@
 				<table id="tab_1">
 					<tr>
 						<td>1</td>
-						<td><input id="input_1"type="text"></td>
+						<td><input id="input_1"type="text" value=""></td>
 					</tr>
 					<tr>
 						<td>2</td>
-						<td><input id="input_2" type="text"></td>
+						<td><input id="input_2" type="text" value=""></td>
 					</tr>
 				</table>
 				<input type="button" onclick="add()" value="Click to add more point"></button>
-				<video id="stream" src="" width=640 height=480></video>
+				
 				 <br>
-				<input type="button" onclick="" value="submit">
+				<input type="button" onclick="openPage(event,'snaping');push_written();record_on();" value="submit">
 			</form>
 			<p id="content"></p>
 		</div>
 	  </div>
+
+	  <div id="snaping" class="tabcontent">
+		<div class="split left">
+			Your input:<br>
+			<li id="input_item">
+			</li>
+        </div>
+		<div class="split right"
+			><video id="stream" src="" width=640 height=480></video>
+        </div>
+	  </div>
 </div>
-<script>
-	navigator.mediaDevices.getUserMedia({video:true}).then(handleSuccess).catch(handleError);
-	function handleSuccess(stream){
-		document.getElementById("stream").srcObject = stream;
-	}
-	function handleError(error){
-	}
-</script>
 <script src="jquery-3.3.1.min.js"></script>
-<script src="mainPage.js"></script>
-<script src="output.js"></script>
+<script src="mainPage.js"></script>	
 <script src="generator.js"></script>
 </body>
 </html>
